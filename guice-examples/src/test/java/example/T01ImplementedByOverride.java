@@ -11,6 +11,11 @@ import com.google.inject.Injector;
 public class T01ImplementedByOverride {
 	private static class ServiceOverride implements Service {
 
+		public void init() {
+			// TODO Auto-generated method stub
+			
+		}
+
 	}
 
 	@Test

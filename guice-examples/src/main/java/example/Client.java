@@ -13,5 +13,9 @@ public class Client {
 	public Service getService() {
 		return service;
 	}
+	
+	public void doWork() {
+		service.init();
+	}
 
 }
