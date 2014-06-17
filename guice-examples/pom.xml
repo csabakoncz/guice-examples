@@ -3,6 +3,13 @@
   <groupId>com.ck</groupId>
   <artifactId>guice-examples</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+    <jdk.version>1.7</jdk.version>
+    <maven.compiler.source>${jdk.version}</maven.compiler.source>
+    <maven.compiler.target>${jdk.version}</maven.compiler.target>
+  </properties>
+    
   <dependencies>
   	<dependency>
   		<groupId>com.google.inject</groupId>
