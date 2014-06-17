@@ -1,6 +1,6 @@
 package example;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import javax.inject.Inject;
 import javax.inject.Named;
