@@ -1,6 +1,7 @@
 package sample;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.inject.Provider;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -19,11 +20,17 @@ public class MyVaadinUI extends UI {
 
 	private final Provider<HttpServletRequest> requestProvider;
 	private final Provider<HttpSession> sessionProvider;
+	private final Provider<Double> requestRandomProvider;
+	private final Provider<Double> sessionRandomProvider;
 
 	@Inject
-	public MyVaadinUI(Provider<HttpServletRequest> requestProvider, Provider<HttpSession> sessionProvider) {
+	public MyVaadinUI(Provider<HttpServletRequest> requestProvider, Provider<HttpSession> sessionProvider,
+			@Named("request") Provider<Double> requestRandomProvider,
+			@Named("session") Provider<Double> sessionRandomProvider) {
 		this.requestProvider = requestProvider;
 		this.sessionProvider = sessionProvider;
+		this.requestRandomProvider = requestRandomProvider;
+		this.sessionRandomProvider = sessionRandomProvider;
 	}
 
 	@Override
@@ -43,6 +50,12 @@ public class MyVaadinUI extends UI {
 
 				String request = "HttpServletRequest=" + requestProvider.get();
 				layout.addComponent(new Label(request));
+
+				String sessionRandom = "session random =" + sessionRandomProvider.get();
+				layout.addComponent(new Label(sessionRandom));
+
+				String requestRandom = "request random =" + requestRandomProvider.get();
+				layout.addComponent(new Label(requestRandom));
 			}
 		});
 		layout.addComponent(button);

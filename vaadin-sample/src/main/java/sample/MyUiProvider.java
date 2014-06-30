@@ -8,6 +8,7 @@ import com.vaadin.server.UICreateEvent;
 import com.vaadin.server.UIProvider;
 import com.vaadin.ui.UI;
 
+@SuppressWarnings("serial")
 public class MyUiProvider extends UIProvider {
 	private final Provider<MyVaadinUI> diUIProvider;
 
